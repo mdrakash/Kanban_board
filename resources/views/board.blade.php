@@ -21,9 +21,52 @@
                     </div>
                 </form>
             </div>
-            
-
         </div>
+        <div class="row">
+            <div class="d-flex justify-content-center mb-3">
+                <div class="col-md-3 p-2 bd-highlight">
+                    <div class="card">
+                        <div class="card-header">
+                            To Do
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Task 01</li>
+                                <li>Task 02</li>
+                            </ul>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-2 bd-highlight">
+                    <div class="card">
+                        <div class="card-header">
+                            In Progress
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Task 03</li>
+                                <li>Task 04</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 p-2 bd-highlight">
+                    <div class="card">
+                        <div class="card-header">
+                            Done
+                        </div>
+                        <div class="card-body">
+                            <ul>
+                                <li>Task 05</li>
+                                <li>Task 06</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 
     <script src="{{ asset('board.js') }}"></script>
