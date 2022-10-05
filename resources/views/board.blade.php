@@ -30,11 +30,11 @@
                             To Do
                         </div>
                         <div class="card-body">
-                            <ul>
-                                <li>Task 01</li>
-                                <li>Task 02</li>
-                            </ul>
-                            </blockquote>
+                            <ul class="list-group list-group-numbered">
+                                <li class="list-group-item">Cras justo odio</li>
+                                <li class="list-group-item">Cras justo odio</li>
+                                <li class="list-group-item">Cras justo odio</li>
+                              </ul>
                         </div>
                     </div>
                 </div>
@@ -44,10 +44,11 @@
                             In Progress
                         </div>
                         <div class="card-body">
-                            <ul>
-                                <li>Task 03</li>
-                                <li>Task 04</li>
-                            </ul>
+                            <ul class="list-group list-group-numbered">
+                                <li class="list-group-item">Cras justo odio</li>
+                                <li class="list-group-item">Cras justo odio</li>
+                                <li class="list-group-item">Cras justo odio</li>
+                              </ul>
                         </div>
                     </div>
                 </div>
@@ -57,10 +58,11 @@
                             Done
                         </div>
                         <div class="card-body">
-                            <ul>
-                                <li>Task 05</li>
-                                <li>Task 06</li>
-                            </ul>
+                            <ul class="list-group list-group-numbered">
+                                <li class="list-group-item">Cras justo odio</li>
+                                <li class="list-group-item">Cras justo odio</li>
+                                <li class="list-group-item">Cras justo odio</li>
+                              </ul>
                         </div>
                     </div>
                 </div>
