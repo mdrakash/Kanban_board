@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
+
 
 use App\Models\ToDo;
 use Illuminate\Http\Request;
@@ -13,7 +14,7 @@ class ToDoController
             ToDo::create([
                 'taskName' => $request->taskName,
             ]);
-            return redirect('/');
+            return response()->json('ToDo Created Successfully');
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -23,7 +24,7 @@ class ToDoController
     {
         try {
             ToDo::destroy($id);
-            return redirect('/');
+            return response()->json('ToDo Deleted Successfully');
         } catch (\Throwable $th) {
             throw $th;
         }

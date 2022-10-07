@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Models\ProgressList;
 use App\Models\ToDo;
@@ -15,7 +15,7 @@ class ProgressListController
                 'progress' =>$getTodo->taskName,
             ]);
             $getTodo->delete();
-            return redirect('/');
+            return response()->json('Progress Created Successfully');
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -25,7 +25,7 @@ class ProgressListController
     {
         try {
             ProgressList::destroy($id);
-            return redirect('/');
+            return response()->json('Progress Deleted Successfully');
         } catch (\Throwable $th) {
             throw $th;
         }

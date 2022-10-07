@@ -1,19 +1,19 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Api\DoneListController;
+use App\Http\Controllers\Api\ProgressListController;
+use App\Http\Controllers\Api\ToDoController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+// ToDo Route
+Route::post('/add-todo-task',[ToDoController::class,'create']);
+Route::get('/delete-todo-task/{id}',[ToDoController::class,'delete']);
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Progress Route 
+Route::get('/add-progress-task/{id}',[ProgressListController::class,'create']);
+Route::get('/delete-progress-task/{id}',[ProgressListController::class,'delete']);
+
+// Done Route 
+Route::get('/add-done-task/{id}',[DoneListController::class,'create']);
+Route::get('/delete-done-task/{id}',[DoneListController::class,'delete']);
+

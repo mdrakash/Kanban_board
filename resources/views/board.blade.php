@@ -9,6 +9,15 @@
     <link rel="stylesheet" href="{{ asset('style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <style>
+        .bg-color{
+            background-color: orangered;
+        }
+        .txt-color{
+            color: orangered;
+        }
+    </style>
 </head>
 
 <body>
@@ -19,7 +28,7 @@
                     @csrf
                     <div class="input-group mb-3">
                         <input type="text" name="taskName" id="addtask" class="form-control" placeholder="Write Your Task ...">
-                        <button class="mr-3 btn btn-outline-secondary" type="submit" id="addtaskbtn">Add</button>
+                        <button class="ms-3 btn btn-outline-secondary txt-color" type="submit" id="addtaskbtn">Add</button>
                     </div>
                 </form>
             </div>
@@ -29,15 +38,15 @@
                 <!-- To Do List  -->
                 <div class="col-md-3 p-2 bd-highlight">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header bg-color">
                             TO DO
                         </div>
                         <div class="card-body">
                             <ul class="list-group list-group-numbered" id="task-list">
                                 @foreach($todoList as $todos)
                                     <li class="bg-light list-group-item task">{{ $todos->taskName }}
-                                        <a href="{{ url('add-progress-task/' .$todos->id)  }}" class="btn btn-primary btn-sm ms-2 float-end"><i class="fa-solid fa-check"></i></a>
-                                        <a href="{{ url('delete-todo-task/' .$todos->id)  }}" class="btn btn-primary btn-sm float-end"><i class="fa-solid fa-minus"></i></a>
+                                        <a href="{{ url('add-progress-task/' .$todos->id)  }}" class="btn btn-secondary btn-sm ms-2 float-end"><i class="fa-solid fa-right-long"></i></a>
+                                        <a href="{{ url('delete-todo-task/' .$todos->id)  }}" class="btn btn-danger btn-sm float-end"><i class="fa-solid fa-trash"></i></a>
                                     </li>
                                 @endforeach
                               </ul>
@@ -47,15 +56,15 @@
                 <!-- Progress List -->
                 <div class="col-md-3 p-2 bd-highlight">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header bg-color">
                             In Progress
                         </div>
                         <div class="card-body">
                             <ul class="list-group list-group-numbered" id="progress-list">
                                 @foreach($progressList as $progress)
                                     <li class="bg-light list-group-item task">{{ $progress->progress }}
-                                        <a href="{{ url('add-done-task/' .$progress->id)  }}" class="btn btn-primary btn-sm ms-2 float-end"><i class="fa-solid fa-check"></i></a>
-                                        <a href="{{ url('delete-progress-task/' .$progress->id)  }}" class="btn btn-primary btn-sm float-end"><i class="fa-solid fa-minus"></i></a>
+                                        <a href="{{ url('add-done-task/' .$progress->id)  }}" class="btn btn-success btn-sm ms-2 float-end"><i class="fa-solid fa-check"></i></a>
+                                        <a href="{{ url('delete-progress-task/' .$progress->id)  }}" class="btn btn-danger btn-sm float-end"><i class="fa-solid fa-trash"></i></a>
                                     </li>
                                 @endforeach
                               </ul>
@@ -65,14 +74,14 @@
                 <!-- Done List -->
                 <div class="col-md-3 p-2 bd-highlight">
                     <div class="card">
-                        <div class="card-header">
+                        <div class="card-header bg-color">
                             Done
                         </div>
                         <div class="card-body">
                             <ul class="list-group list-group-numbered">
                                 @foreach($doneList as $done)
                                     <li class="bg-light list-group-item task">{{ $done->done }}
-                                        <a href="{{ url('delete-done-task/' .$done->id)  }}" class="btn btn-primary btn-sm float-end"><i class="fa-solid fa-minus"></i></a>
+                                        <a href="{{ url('delete-done-task/' .$done->id)  }}" class="btn btn-danger btn-sm float-end"><i class="fa-solid fa-trash"></i></a>
                                     </li>
                                 @endforeach
                               </ul>

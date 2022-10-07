@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Models\DoneList;
 use App\Models\ProgressList;
@@ -15,7 +15,7 @@ class DoneListController
                 'done' =>$getProgress->progress,
             ]);
             $getProgress->delete();
-            return redirect('/');
+            return response()->json('Created Successfully');
         } catch (\Throwable $th) {
             throw $th;
         }
@@ -25,7 +25,7 @@ class DoneListController
     {
         try {
             DoneList::destroy($id);
-            return redirect('/');
+            return response()->json('Deleted Successfully');
         } catch (\Throwable $th) {
             throw $th;
         }
