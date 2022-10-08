@@ -7,6 +7,15 @@ use App\Models\ProgressList;
 
 class DoneListController
 {
+    public function index()
+    {
+        try {
+            $doneList = DoneList::orderBy('created_at', 'asc')->get();
+            return response()->json(['data'=>$doneList]);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
     public function create($id)
     {
         try {

@@ -1,19 +1,25 @@
 <?php
 
-use App\Http\Controllers\Api\DoneListController;
-use App\Http\Controllers\Api\ProgressListController;
-use App\Http\Controllers\Api\ToDoController;
+use App\Http\Controllers\Api\{DoneListController,ProgressListController,ToDoController};
 use Illuminate\Support\Facades\Route;
 
 // ToDo Route
-Route::post('/add-todo-task',[ToDoController::class,'create']);
-Route::get('/delete-todo-task/{id}',[ToDoController::class,'delete']);
+Route::controller(ToDoController::class)->group(function () {
+    Route::get('/todo','index');
+    Route::post('/add-todo-task','create');
+    Route::get('/delete-todo-task/{id}','delete');
+});
 
 // Progress Route 
-Route::get('/add-progress-task/{id}',[ProgressListController::class,'create']);
-Route::get('/delete-progress-task/{id}',[ProgressListController::class,'delete']);
+Route::controller(ProgressListController::class)->group(function () {
+    Route::get('/progress','index');
+    Route::post('/add-progress-task/{id}','create');
+    Route::get('/delete-progress-task/{id}','delete');
+});
 
 // Done Route 
-Route::get('/add-done-task/{id}',[DoneListController::class,'create']);
-Route::get('/delete-done-task/{id}',[DoneListController::class,'delete']);
-
+Route::controller(DoneListController::class)->group(function () {
+    Route::get('/done','index');
+    Route::post('/add-done-task/{id}','create');
+    Route::get('/delete-done-task/{id}','delete');
+});

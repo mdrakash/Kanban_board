@@ -7,6 +7,15 @@ use App\Models\ToDo;
 
 class ProgressListController
 {
+    public function index()
+    {
+        try {
+            $progressList = ProgressList::orderBy('created_at', 'asc')->get();
+            return response()->json(['data'=>$progressList]);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
     public function create($id)
     {
         try {

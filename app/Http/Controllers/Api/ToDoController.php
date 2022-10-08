@@ -8,6 +8,15 @@ use Illuminate\Http\Request;
 
 class ToDoController
 {
+    public function index()
+    {
+        try {
+            $todoList = ToDo::all();
+            return response()->json(['data'=>$todoList]);
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
     public function create(Request $request)
     {
         try {

@@ -1,11 +1,7 @@
 <?php
 
-use App\Http\Controllers\DoneListController;
-use App\Http\Controllers\ProgressListController;
-use App\Http\Controllers\ToDoController;
-use App\Models\DoneList;
-use App\Models\ProgressList;
-use App\Models\ToDo;
+use App\Http\Controllers\{ToDoController,ProgressListController,DoneListController};
+use App\Models\{ToDo,ProgressList,DoneList};
 use Illuminate\Support\Facades\Route;
 
 
